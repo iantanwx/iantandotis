@@ -1,6 +1,6 @@
 <script lang="ts">
 	import NavItem from './NavItem.svelte';
-	import Dark from '../../assets/icons/dark.svg?component';
+	import Dark from '../assets/icons/dark.svg?component';
 </script>
 
 <nav class="container mx-auto flex flex-row justify-between py-4">
