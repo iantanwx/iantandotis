@@ -3,9 +3,9 @@
 	import Nav from '../components/Nav.svelte';
 </script>
 
-<div class="min-h-full bg-gray-50 dark:bg-gray-800">
+<div class="min-h-full bg-gray-50 dark:bg-gray-900">
 	<Nav />
-	<main class="flex flex-col justify-center bg-gray-50 dark:bg-gray-800">
+	<main class="flex flex-col justify-center ">
 		<slot />
 	</main>
 </div>
