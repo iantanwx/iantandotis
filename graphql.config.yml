@@ -1,0 +1,3 @@
+schema: https://docs.github.com/public/schema.docs.graphql
+exclude: src/**/*.svelte
+include: src/**/*.ts
