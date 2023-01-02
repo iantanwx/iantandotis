@@ -5,42 +5,32 @@
 </script>
 
 <div
-	class="flex flex-col justify-center py-8 prose dark:prose-invert prose-a:text-rose-500 hover:prose-a:text-rose-700  max-w-none"
+	class="flex flex-row justify-start space-x-12 py-8 prose dark:prose-invert prose-a:text-rose-500 hover:prose-a:text-rose-700  max-w-none"
 >
+	<div class="flex flex-col items-center justify-start">
+		<img class="inline-block h-28 w-28 rounded-full mt-0 mb-6" src="/profile_picture.jpeg" alt="" />
+		<div class="flex flex-row items-center justify-center space-x-4 mb-4">
+			<a href="https://github.com/iantanwx" target="_blank" rel="noreferrer">
+				<GithubIcon width="28" height="28" />
+			</a>
+			<a href="https://twitter.com/iantanwx" target="_blank" rel="noreferrer">
+				<TwitterIcon width="28" height="28" />
+			</a>
+			<a href="https://www.linkedin.com/in/ian-tan-001129156" target="_blank" rel="noreferrer">
+				<LinkedInIcon width="28" height="28" />
+			</a>
+		</div>
+	</div>
 	<div class="flex flex-col items-center justify-center">
 		<h1
-			class="text-4xl leading-7 text-center m-0 after:w-10 after:h-1 after:block after:bg-purple-500 after:m-auto after:my-4"
+			class="text-4xl leading-7 text-center m-0 after:w-10 after:h-1 after:block after:bg-purple-500 after:m-auto after:mt-4 after:mb-2"
 		>
 			Ian Tan
 		</h1>
-		<img class="inline-block h-28 w-28 rounded-full" src="/profile_picture.jpeg" alt="" />
+		<p class="text text-left">
+			Product engineer. Currently senior backend engineere @ Foodpanda. Formerly ByteDance, GoJek.
+			Passionate about start ups, productivity, coaching, and mentorship. Biohacker by night.
+			Currently building Minmax in public.
+		</p>
 	</div>
-	<div class="flex flex-row items-center justify-center space-x-4 mb-4">
-		<a href="https://github.com/iantanwx" target="_blank" rel="noreferrer">
-			<GithubIcon width="28" height="28" />
-		</a>
-		<a href="https://twitter.com/iantanwx" target="_blank" rel="noreferrer">
-			<TwitterIcon width="28" height="28" />
-		</a>
-		<a href="https://www.linkedin.com/in/ian-tan-001129156" target="_blank" rel="noreferrer">
-			<LinkedInIcon width="28" height="28" />
-		</a>
-	</div>
-	<p>
-		Hi, I'm Ian, and I love building delightful products that spark joy. Over the years, I've had
-		the privilege of doing just that at companies of all conceivable scales and stages, from my own
-		5-person start up, to a 100,000+ headcount behemoth in ByteDance, and most recently at
-		Foodpanda. As a senior software engineer, I'm passionate about optimising productivity in teams
-		and individuals, and greatly enjoy coaching young developers starting out on their journeys.
-	</p>
-	<p>
-		Outside work, I enjoy biohacking and human performance optimisation. To that end, I'm working on
-		Minmax, an app and community that helps average people like myself unlock their best selves by
-		taking a science-based approach to daily routines and supplementation by leveraging the power of
-		automation and software. Inspired by <a
-			href="https://www.swyx.io/"
-			target="_blank"
-			rel="noreferrer">@swyx</a
-		>, I'm Building in Public, and chronicling my journey here.
-	</p>
 </div>

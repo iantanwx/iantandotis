@@ -35,9 +35,9 @@
 	</p>
 	<p>
 		Outside work, I enjoy biohacking and human performance optimisation. To that end, I'm working on
-		Minmax, an app and community that helps average people like myself unlock their best selves by
-		taking a science-based approach to daily routines and supplementation by leveraging the power of
-		automation and software. Inspired by <a
+		Minmax, an app and community that helps average people like myself unlock their best selves
+		through a science-based approach to exercise, habit building, and supplementation by leveraging
+		the power of automation and software. Inspired by <a
 			href="https://www.swyx.io/"
 			target="_blank"
 			rel="noreferrer">@swyx</a
