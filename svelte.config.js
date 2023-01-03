@@ -1,6 +1,12 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
+import remarkToc from 'remark-toc';
+import remarkGithub from 'remark-github';
+import remarkGfm from 'remark-gfm';
+import rehypeStringify from 'rehype-stringify';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutoLink from 'rehype-autolink-headings';
 import path from 'path';
 import url from 'url';
 
@@ -16,6 +22,12 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
+			rehypePlugins: [rehypeStringify, rehypeSlug, rehypeAutoLink],
+			remarkPlugins: [
+				remarkToc,
+				[remarkGithub, { repository: 'https://github.com/iantanwx/iantandotis' }],
+				[remarkGfm, { repository: 'https://github.com/iantanwx/iantandotis' }]
+			],
 			extensions: ['.md', '.svx']
 		})
 	],

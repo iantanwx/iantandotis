@@ -4,5 +4,6 @@
 </script>
 
 <div>
+	{JSON.stringify(data.metadata)}
 	<svelte:component this={data.component} />
 </div>
