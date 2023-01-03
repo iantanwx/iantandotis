@@ -2,6 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import slugify from 'slugify';
 import { dev } from '$app/environment';
 import { GITHUB_TOKEN } from '$env/static/private';
+import fs from 'fs';
 
 const client = new GraphQLClient('https://api.github.com/graphql', {
 	headers: {
@@ -54,6 +55,12 @@ export const getPosts = async () => {
 		allPosts.push(...posts);
 		pageInfo = res.repository.issues.pageInfo;
 	} while (pageInfo.hasNextPage);
+	if (!fs.existsSync('./.content')) {
+		fs.mkdirSync('./.content');
+	}
+	for (const post of allPosts) {
+		fs.writeFileSync(`./.content/${post.id}.md`, post.body);
+	}
 	postsCache = allPosts;
 	return allPosts;
 };

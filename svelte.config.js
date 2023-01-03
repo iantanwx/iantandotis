@@ -1,6 +1,12 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
+import path from 'path';
+import url from 'url';
+
+function dirname() {
+	return path.dirname(url.fileURLToPath(import.meta.url));
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,13 +14,15 @@ const config = {
 	// for more information about preprocessors
 	extensions: ['.svelte', '.html', '.svx', '.md'],
 	preprocess: [
+		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md', '.svx']
-		}),
-		vitePreprocess()
+		})
 	],
-
 	kit: {
+		alias: {
+			$components: path.resolve(dirname(), 'src/components')
+		},
 		adapter: adapter()
 	}
 };

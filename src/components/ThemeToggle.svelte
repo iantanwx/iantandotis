@@ -22,7 +22,6 @@
 			isDark = true;
 		}
 	}
-	console.log('isDark: ', isDark);
 </script>
 
 <button class="flex flex-col justify-center hover:cursor-pointer" on:click={toggleDarkMode}>
