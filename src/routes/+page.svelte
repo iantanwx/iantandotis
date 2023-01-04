@@ -7,24 +7,24 @@
 
 <div class="flex flex-col">
 	<ShortBio />
-	<div class="flex flex-col justify-center py-8 prose dark:prose-invert  max-w-none">
+	<div class="prose flex max-w-none flex-col justify-center py-8  dark:prose-invert">
 		<h2
-			class="text-3xl after:absolute after:w-10 after:h-1 after:block after:bg-purple-500 after:m-auto after:mt-4 after:mb-2"
+			class="text-3xl after:absolute after:m-auto after:mt-4 after:mb-2 after:block after:h-1 after:w-10 after:bg-purple-500"
 		>
 			Posts
 		</h2>
-		<ul class="flex flex-col mt-2 list-none px-0">
+		<ul class="mt-2 flex list-none flex-col px-0">
 			{#each data.posts as post}
-				<li class="flex flex-row px-0 space-x-2 justify-between items-center">
-					<h3 class="text-left m-0">
+				<li class="flex flex-row items-center justify-between space-x-2 px-0">
+					<h3 class="m-0 text-left">
 						<a
-							class=" hover:text-rose-500 hover:underline no-underline"
+							class=" no-underline hover:text-rose-500 hover:underline"
 							href={`/posts/${post.slug}`}
 						>
 							{post.title}
 						</a>
 					</h3>
-					<h4 class="text-left font-light m-0">
+					<h4 class="m-0 text-left font-light">
 						{format(parse(post.closedAt), 'dd MMM yyyy')}
 					</h4>
 				</li>

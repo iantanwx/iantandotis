@@ -22,7 +22,17 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			rehypePlugins: [rehypeStringify, rehypeSlug, rehypeAutoLink],
+			rehypePlugins: [
+				rehypeStringify,
+				rehypeSlug,
+				[
+					rehypeAutoLink,
+					{
+						behavior: 'wrap',
+						properties: { class: 'heading hover:text-rose-500 no-underline' }
+					}
+				]
+			],
 			remarkPlugins: [
 				remarkToc,
 				[remarkGithub, { repository: 'https://github.com/iantanwx/iantandotis' }],
