@@ -3,12 +3,17 @@ module.exports = {
 	content: ['./src/**/*.{html,js,ts,svelte,svx,md}'],
 	theme: {
 		extend: {
-			typography: (_) => ({
+			typography: (theme) => ({
 				DEFAULT: {
 					css: {
-						'a.heading': {
+						'.dark a.heading': {
 							'&:not(:hover)': {
 								color: '#fff !important'
+							}
+						},
+						'&:not(.dark) a.heading': {
+							'&:not(:hover)': {
+								color: `${theme('colors.gray.900')} !important`
 							}
 						}
 					}
