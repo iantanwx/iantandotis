@@ -36,7 +36,7 @@ const GET_POSTS_QUERY = gql`
 	}
 `;
 
-let postsCache: any[] = [];
+const postsCache: Record<string, any> = {};
 
 export const getPosts = async () => {
 	const allPosts: any[] = [];
@@ -55,21 +55,27 @@ export const getPosts = async () => {
 		allPosts.push(...posts);
 		pageInfo = res.repository.issues.pageInfo;
 	} while (pageInfo.hasNextPage);
+
 	if (!fs.existsSync('./.content')) {
 		fs.mkdirSync('./.content');
 	}
+
 	for (const post of allPosts) {
-		fs.writeFileSync(`./.content/${post.id}.md`, post.body);
+		const cachedPost = postsCache[post.slug];
+		if (!cachedPost || cachedPost.body !== post.body) {
+			fs.writeFileSync(`./.content/${post.id}.md`, post.body);
+			postsCache[post.slug] = post;
+		}
 	}
-	postsCache = allPosts;
+
 	return allPosts;
 };
 
 export const getPost = async (slug: string) => {
-	if (dev || !postsCache.length) {
+	if (dev || !Object.entries(postsCache).length) {
 		await getPosts();
 	}
-	const post = postsCache.find((post) => post.slug === slug);
+	const post = postsCache[slug];
 	if (!post) {
 		throw new Error(`Post not found: ${slug}`);
 	}
