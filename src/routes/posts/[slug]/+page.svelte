@@ -27,7 +27,7 @@
 	<div
 		class="flex flex-col after:mt-4 after:mb-2 after:block after:h-1 after:w-12 after:bg-purple-500"
 	>
-		<h1 class="mb-0 text-5xl font-bold text-gray-900 dark:text-white  sm:leading-normal">
+		<h1 class="mb-0 text-4xl font-bold text-gray-900 dark:text-white sm:leading-normal md:text-5xl">
 			{data.metadata?.title ?? data.post.title}
 		</h1>
 		<p>{format(parse(data.post.createdAt), 'dd MMM yyyy')}</p>
