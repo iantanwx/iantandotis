@@ -41,9 +41,9 @@
 			Ian Tan
 		</h1>
 		<p class="text text-left">
-			Product engineer. Currently senior backend engineer @ Foodpanda. Formerly ByteDance, GoJek.
-			Passionate about start ups, productivity, coaching, and mentorship. Solopreneur by night,
-			building in public and sharing my journey.
+			Product engineer. Currently senior backend engineer @ Foodpanda and recovering crypto founder.
+			Past lives ByteDance, GoJek and Tech in Asia. Passionate about start ups, productivity, and
+			mentorship. Indie hacker by night, building in public and sharing my journey.
 		</p>
 	</div>
 </div>

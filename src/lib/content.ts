@@ -1,8 +1,8 @@
-import { GraphQLClient, gql } from 'graphql-request';
+import fs from 'fs';
 import slugify from 'slugify';
+import { gql, GraphQLClient } from 'graphql-request';
 import { dev } from '$app/environment';
 import { GITHUB_TOKEN } from '$env/static/private';
-import fs from 'fs';
 
 const client = new GraphQLClient('https://api.github.com/graphql', {
 	headers: {
@@ -24,7 +24,7 @@ const GET_POSTS_QUERY = gql`
 					id
 					title
 					body
-					closedAt
+					createdAt
 				}
 				totalCount
 				pageInfo {
@@ -49,7 +49,7 @@ export const getPosts = async () => {
 				title: node.title,
 				body: node.body,
 				slug: slugify(node.title, { lower: true }),
-				closedAt: node.closedAt
+				createdAt: node.createdAt
 			};
 		});
 		allPosts.push(...posts);

@@ -5,17 +5,17 @@
 </script>
 
 <div
-	class="flex flex-col justify-center py-8 prose dark:prose-invert prose-a:text-rose-500 hover:prose-a:text-rose-700  max-w-none"
+	class="prose flex max-w-none flex-col justify-center py-8 prose-a:text-rose-500 hover:prose-a:text-rose-700  dark:prose-invert"
 >
 	<div class="flex flex-col items-center justify-center">
 		<h1
-			class="text-4xl leading-7 text-center m-0 after:w-10 after:h-1 after:block after:bg-purple-500 after:m-auto after:my-4"
+			class="m-0 text-center text-4xl leading-7 after:m-auto after:my-4 after:block after:h-1 after:w-10 after:bg-purple-500"
 		>
 			Ian Tan
 		</h1>
 		<img class="inline-block h-28 w-28 rounded-full" src="/profile_picture.jpeg" alt="" />
 	</div>
-	<div class="flex flex-row items-center justify-center space-x-4 mb-4">
+	<div class="mb-4 flex flex-row items-center justify-center space-x-4">
 		<a href="https://github.com/iantanwx" target="_blank" rel="noreferrer">
 			<GithubIcon width="28" height="28" />
 		</a>
@@ -32,15 +32,11 @@
 		5-person start up, to a 100,000+ headcount behemoth in ByteDance, and most recently at
 		Foodpanda. As a senior software engineer, I'm passionate about optimising productivity in teams
 		and individuals, and greatly enjoy coaching young developers starting out on their journeys.
-	</p>
-	<p>
-		Outside work, I enjoy biohacking and human performance optimisation. To that end, I'm working on
-		Minmax, an app and community that helps average people like myself unlock their best selves
-		through a science-based approach to exercise, habit building, and supplementation by leveraging
-		the power of automation and software. Inspired by <a
+		Outside work, I'm an occasional karter, avid biohacker and productivity nerd. A tinkerer and
+		maker at heart, I'm always working on some side project or another. Inspired by <a
 			href="https://www.swyx.io/"
 			target="_blank"
 			rel="noreferrer">@swyx</a
-		>, I'm Building in Public, and chronicling my journey here.
+		>, I intend to Build in Public while chronicling my journey here.
 	</p>
 </div>

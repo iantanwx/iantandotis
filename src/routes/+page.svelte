@@ -25,7 +25,7 @@
 						</a>
 					</h3>
 					<h4 class="m-0 text-left font-light">
-						{format(parse(post.closedAt), 'dd MMM yyyy')}
+						{format(parse(post.createdAt), 'dd MMM yyyy')}
 					</h4>
 				</li>
 			{/each}
