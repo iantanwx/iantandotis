@@ -11,7 +11,6 @@
 		}
 	}
 	function toggleDarkMode() {
-		console.log('toggled dark mode');
 		if (isDark) {
 			document.documentElement.classList.remove('dark');
 			localStorage.theme = 'light';

@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import vercel from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkToc from 'remark-toc';
@@ -45,7 +45,7 @@ const config = {
 		alias: {
 			$components: path.resolve(dirname(), 'src/components')
 		},
-		adapter: adapter()
+		adapter: vercel()
 	}
 };
 

@@ -1,8 +1,9 @@
 import { getPost } from '$lib/content';
 
+export const prerender = true;
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }: any) {
 	const { slug } = params;
-	const post = await getPost(slug);
-	return post;
+	return await getPost(slug);
 }
