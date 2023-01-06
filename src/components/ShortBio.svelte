@@ -4,8 +4,10 @@
 	import LinkedInIcon from '../assets/icons/linkedin.svg?component';
 </script>
 
-<div class="prose flex max-w-none flex-row justify-start space-x-12 py-8 dark:prose-invert">
-	<div class="flex flex-col items-center justify-start">
+<div
+	class="prose flex max-w-none flex-col justify-start py-8 dark:prose-invert sm:flex-row sm:space-x-12"
+>
+	<div class="flex flex-col items-center justify-center">
 		<img class="mt-0 mb-6 inline-block h-28 w-28 rounded-full" src="/profile_picture.jpeg" alt="" />
 		<div class="mb-4 flex flex-row items-center justify-center space-x-4">
 			<a

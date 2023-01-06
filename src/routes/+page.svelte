@@ -15,7 +15,7 @@
 		</h2>
 		<ul class="mt-2 flex list-none flex-col px-0">
 			{#each data.posts as post}
-				<li class="flex flex-row items-center justify-between space-x-2 px-0">
+				<li class="flex flex-col px-0 sm:flex-row sm:items-center sm:justify-between sm:space-x-2">
 					<h3 class="m-0 text-left">
 						<a
 							class=" no-underline hover:text-rose-500 hover:underline"

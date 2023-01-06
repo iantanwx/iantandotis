@@ -31,7 +31,7 @@
 </svelte:head>
 
 <div class="flex min-h-full flex-col bg-gray-50 dark:bg-gray-900">
-	<div class="container mx-auto max-w-4xl flex-1">
+	<div class="container mx-auto max-w-4xl flex-1 px-8">
 		<Nav />
 		<main class="flex min-h-full w-full flex-col justify-center">
 			<slot />
