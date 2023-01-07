@@ -1,4 +1,5 @@
 <script>
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import Footer from '$components/Footer.svelte';
 	import {
@@ -10,6 +11,18 @@
 	} from '$lib/constants';
 	import '../app.css';
 	import Nav from '../components/Nav.svelte';
+	import { inject } from '@vercel/analytics';
+	import { webVitals } from '$lib/analytics';
+
+	inject();
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+	$: if (browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 </script>
 
 <!-- svelte-ignore missing-declaration -->
