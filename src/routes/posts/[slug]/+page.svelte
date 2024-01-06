@@ -23,14 +23,18 @@
 		<meta name="twitter:image" content={data.metadata.image} />
 	{/if}
 </svelte:head>
-<article class="prose mt-4 mb-12 flex min-w-full flex-col prose-a:text-rose-500 dark:prose-invert">
-	<div
-		class="flex flex-col after:mt-4 after:mb-2 after:block after:h-1 after:w-12 after:bg-purple-500"
-	>
-		<h1 class="mb-0 text-4xl font-bold text-gray-900 dark:text-white sm:leading-normal md:text-5xl">
+
+<div class="container my-4 flex max-w-4xl flex-col">
+	<div class="flex flex-col">
+		<h1 class="mb-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
 			{data.metadata?.title ?? data.post.title}
 		</h1>
-		<p>{format(parse(data.post.createdAt), 'dd MMM yyyy')}</p>
+		<p class="leading-7 tracking-tight text-foreground/60">
+			Published {format(parse(data.post.createdAt), 'dd MMM yyyy')}
+		</p>
 	</div>
-	{@html data.post.body}
-</article>
+
+	<article class="prose min-w-full dark:prose-invert">
+		{@html data.post.body}
+	</article>
+</div>

@@ -2,6 +2,8 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import Footer from '$components/Footer.svelte';
+	import Nav from '$components/Nav.svelte';
+	import { webVitals } from '$lib/analytics';
 	import {
 		DEFAULT_OG_IMAGE,
 		SITE_DESCRIPTION,
@@ -9,10 +11,8 @@
 		SITE_URL,
 		TWITTER_HANDLE
 	} from '$lib/constants';
-	import '../app.css';
-	import Nav from '../components/Nav.svelte';
 	import { inject } from '@vercel/analytics';
-	import { webVitals } from '$lib/analytics';
+	import '../app.css';
 
 	inject();
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
@@ -43,12 +43,8 @@
 	<meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
 </svelte:head>
 
-<div class="flex min-h-full flex-col bg-gray-50 dark:bg-gray-900">
-	<div class="container mx-auto max-w-4xl flex-1 px-8">
-		<Nav />
-		<main class="flex min-h-full w-full flex-col justify-center">
-			<slot />
-		</main>
-	</div>
+<div class="relative flex min-h-screen flex-col">
+	<Nav />
+	<slot />
 	<Footer />
 </div>

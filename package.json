@@ -20,14 +20,15 @@
 		"@tailwindcss/typography": "^0.5.8",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"autoprefixer": "^10.4.13",
+		"autoprefixer": "^10.4.16",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"graphql": "^16.6.0",
 		"graphql-request": "^5.1.0",
 		"mdsvex": "^0.11.0",
-		"postcss": "^8.4.20",
+		"postcss": "^8.4.32",
+		"postcss-load-config": "^5.0.2",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prettier-plugin-tailwindcss": "^0.2.1",
@@ -47,8 +48,12 @@
 	"type": "module",
 	"dependencies": {
 		"@vercel/analytics": "^0.1.6",
+		"clsx": "^2.1.0",
 		"date-fns": "^2.29.3",
+		"lucide-svelte": "^0.306.0",
 		"slugify": "^1.6.5",
+		"tailwind-merge": "^2.2.0",
+		"tailwind-variants": "^0.1.20",
 		"web-vitals": "^3.1.0"
 	}
 }

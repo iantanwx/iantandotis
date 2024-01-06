@@ -106,7 +106,7 @@ export const getPost = async (slug: string) => {
 				rehypeAutoLink,
 				{
 					behavior: 'wrap',
-					properties: { class: 'heading hover:text-rose-500 no-underline' }
+					properties: { class: 'heading hover:text-foreground/80 no-underline' }
 				}
 			]
 		],
