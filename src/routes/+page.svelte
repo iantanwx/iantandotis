@@ -6,7 +6,6 @@
 
 <main class="container mx-auto max-w-4xl flex-1">
 	<div class="flex flex-col justify-center py-4 lg:py-8">
-		<h2 class="mb-4 scroll-m-20 pb-2 text-4xl font-extrabold tracking-tight lg:text-5xl">Posts</h2>
 		<ul class="mt-2 flex list-none flex-col px-0">
 			{#each data.posts as post}
 				<li
