@@ -45,6 +45,8 @@
 
 <div class="relative flex min-h-screen flex-col">
 	<Nav />
-	<slot />
+	<main class="flex-1">
+		<slot />
+	</main>
 	<Footer />
 </div>

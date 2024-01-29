@@ -49,6 +49,11 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>Ian Tan - About</title>
+	<meta name="description" content="Ian Tan's Resume" />
+</svelte:head>
+
 <div class="container my-4 max-w-4xl space-y-10">
 	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-10 flex flex-1 flex-col">
