@@ -1,4 +1,5 @@
 import { SITE_TITLE } from '$lib/constants';
+import { Calendar, Github, Globe, Linkedin, Mail, Twitter } from 'lucide-svelte';
 import { compile } from 'mdsvex';
 
 interface WorkExperience {
@@ -107,6 +108,52 @@ const PROJECTS: Array<Project> = [
 	}
 ];
 
+interface ContactDetail {
+	name: string;
+	href: string;
+	icon: 'Mail' | 'Calendar' | 'Twitter' | 'Github' | 'Linkedin';
+}
+
+const CONTACT_DETAILS: Array<ContactDetail> = [
+	{
+		name: 'Email',
+		href: 'mailto:iantanwx@gmail.com',
+		icon: 'Mail'
+	},
+	{
+		name: 'Cal.com',
+		href: 'https://app.cal.com/iantanwx/15min',
+		icon: 'Calendar'
+	},
+	{
+		name: 'Twitter',
+		href: 'https://x.com/iantanwx',
+		icon: 'Twitter'
+	},
+	{
+		name: 'Github',
+		href: 'https://github.com/iantanwx',
+		icon: 'Github'
+	},
+	{
+		name: 'LinkedIn',
+		href: 'https://www.linkedin.com/in/ian-tan-001129156/',
+		icon: 'Linkedin'
+	}
+];
+
+const SKILLS = [
+	'JavaScript',
+	'TypeScript',
+	'React/Next.js',
+	'Node.js',
+	'GraphQL',
+	'Go',
+	'SQL',
+	'AWS',
+	'Kubernetes'
+];
+
 /** @type {import('./$types').PageLoad} */
 export async function load() {
 	const workExperience = await Promise.all(
@@ -125,7 +172,9 @@ export async function load() {
 
 	return {
 		title: `${SITE_TITLE} - About`,
+		contactDetails: CONTACT_DETAILS,
 		workExperience,
+		skills: SKILLS,
 		projects: PROJECTS
 	};
 }

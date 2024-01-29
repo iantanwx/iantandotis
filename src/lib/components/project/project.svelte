@@ -19,6 +19,7 @@
 			{/if}
 			<a
 				class={clsx(
+					'text-foreground',
 					href === '#' && 'pointer-events-none ',
 					href === '#' ? 'no-underline' : ' hover:underline'
 				)}

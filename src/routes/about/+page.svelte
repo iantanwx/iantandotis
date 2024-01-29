@@ -6,45 +6,14 @@
 	import { Work } from '$lib/components/work';
 	import { Calendar, Github, Globe, Linkedin, Mail, Twitter } from 'lucide-svelte';
 
-	const CONTACT_DETAILS = [
-		{
-			name: 'Email',
-			href: 'mailto:iantanwx@gmail.com',
-			icon: Mail
-		},
-		{
-			name: 'Cal.com',
-			href: 'https://app.cal.com/iantanwx/15min',
-			icon: Calendar
-		},
-		{
-			name: 'Twitter',
-			href: 'https://x.com/iantanwx',
-			icon: Twitter
-		},
-		{
-			name: 'Github',
-			href: 'https://github.com/iantanwx',
-			icon: Github
-		},
-		{
-			name: 'LinkedIn',
-			href: 'https://www.linkedin.com/in/ian-tan-001129156/',
-			icon: Linkedin
-		}
-	];
-
-	const SKILLS = [
-		'JavaScript',
-		'TypeScript',
-		'React/Next.js',
-		'Node.js',
-		'GraphQL',
-		'Go',
-		'SQL',
-		'AWS',
-		'Kubernetes'
-	];
+	const icons = {
+		Calendar,
+		Github,
+		Globe,
+		Linkedin,
+		Mail,
+		Twitter
+	};
 
 	export let data;
 </script>
@@ -63,16 +32,27 @@
 				<Globe size={18} class="text-foreground/80" />
 				<p>Singapore / UTC +8</p>
 			</div>
-			<div class="flex flex-row space-x-2">
-				{#each CONTACT_DETAILS as { name, href, icon }}
+			<div class="flex flex-row space-x-2 print:hidden">
+				{#each data.contactDetails as { name, href, icon }}
 					<a
 						class="rounded-sm border border-foreground/80 text-lg text-foreground/80 transition-colors hover:border-foreground/60 hover:text-foreground/60"
 						{href}
 						target="_blank"
 						aria-label={name}
 					>
-						<svelte:component this={icon} class="p-1.5" strokeWidth={1} size={28} />
+						<svelte:component this={icons[icon]} class="p-1.5" strokeWidth={1} size={28} />
 					</a>
+				{/each}
+			</div>
+			<div class="text hidden flex-col space-y-2 text-lg print:flex">
+				{#each data.contactDetails as { name, href, icon }}
+					{#if name === 'Email'}
+						<a {href} aria-label={name}>
+							<svelte:component this={icons[icon]} class="inline" strokeWidth={1} size={18} />
+							<span class="text-sm text-foreground/80 underline">{href.replace('mailto:', '')}</span
+							>
+						</a>
+					{/if}
 				{/each}
 			</div>
 		</div>
@@ -87,7 +67,7 @@
 	</div>
 	<div class="flex flex-col space-y-2">
 		<h3 class="mb-4 text-2xl font-bold tracking-tight">About</h3>
-		<p class="prose max-w-none text-lg dark:prose-invert">
+		<p class="prose max-w-none text-lg dark:prose-invert print:text-foreground/80">
 			Over the last 8 years, I've had the privilege of building a variety of products at companies
 			of all conceivable scales and stages, from my own 5-person start up, to a 100,000+ headcount
 			behemoth in ByteDance, and most recently at DeliveryHero. As a senior software engineer, I'm
@@ -107,7 +87,7 @@
 	<div class="flex flex-col space-y-2">
 		<h3 class="mb-4 text-2xl font-bold tracking-tight">Skills</h3>
 		<div class="flex flex-row flex-wrap gap-2">
-			{#each SKILLS as skill}
+			{#each data.skills as skill}
 				<Badge>{skill}</Badge>
 			{/each}
 		</div>

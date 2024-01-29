@@ -4,7 +4,7 @@
 	import ThemeToggle from './ThemeToggle.svelte';
 </script>
 
-<nav class="container mx-auto flex max-w-4xl flex-row justify-between py-4">
+<nav class="container mx-auto flex max-w-4xl flex-row justify-between py-4 print:hidden">
 	<div class="flex flex-row items-center justify-start gap-4">
 		<Avatar.Root>
 			<Avatar.Image src="/logo_dark.png" alt="Avatar" />
