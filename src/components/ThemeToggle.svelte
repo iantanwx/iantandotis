@@ -1,30 +1,21 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { Theme, theme, toggleTheme } from '$lib/state/theme';
 	import Dark from '../assets/icons/dark.svg?component';
 	import Light from '../assets/icons/light.svg?component';
-	let isDark = false;
-	if (typeof localStorage !== 'undefined') {
-		if (
-			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			isDark = true;
-		}
-	}
-	function toggleDarkMode() {
-		if (isDark) {
-			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
-			isDark = false;
+
+	theme.subscribe((value) => {
+		if (!browser) return;
+		if (value === Theme.Dark) {
+			document.documentElement.classList.add(Theme.Dark);
 		} else {
-			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
-			isDark = true;
+			document.documentElement.classList.remove(Theme.Dark);
 		}
-	}
+	});
 </script>
 
-<button class="flex flex-col justify-center hover:cursor-pointer" on:click={toggleDarkMode}>
-	{#if isDark}
+<button class="flex flex-col justify-center hover:cursor-pointer" on:click={toggleTheme}>
+	{#if $theme === Theme.Light}
 		<Light class="text-yellow-300" height={24} />
 	{:else}
 		<Dark class="text-yellow-500" height={24} />
